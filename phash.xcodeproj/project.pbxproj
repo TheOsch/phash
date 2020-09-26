@@ -31,6 +31,7 @@
 		C7D906EC251F036500EEAD5E /* ImageHash.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ImageHash.hpp; sourceTree = "<group>"; };
 		C7D906EE251F20D700EEAD5E /* phash.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = phash.cpp; sourceTree = "<group>"; };
 		C7D906EF251F20D700EEAD5E /* phash.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = phash.hpp; sourceTree = "<group>"; };
+		C7D906F1251F3BDB00EEAD5E /* CMakeLists.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +69,7 @@
 				C7D906EC251F036500EEAD5E /* ImageHash.hpp */,
 				C7D906EE251F20D700EEAD5E /* phash.cpp */,
 				C7D906EF251F20D700EEAD5E /* phash.hpp */,
+				C7D906F1251F3BDB00EEAD5E /* CMakeLists.txt */,
 			);
 			path = phash;
 			sourceTree = "<group>";

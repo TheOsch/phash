@@ -1,6 +1,7 @@
 #include "ImageHash.hpp"
 
 #include <new>
+#include <stdexcept>
 
 ImageHash::ImageHash(const std::vector<bool> &binary_array) {
     _hash = binary_array;

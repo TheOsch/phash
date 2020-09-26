@@ -1,6 +1,7 @@
 #include "phash.hpp"
 
 #include <cmath>
+#include <stdexcept>
 
 static void to_grayscale(Magick::Image &img);
 
