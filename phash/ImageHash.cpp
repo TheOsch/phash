@@ -14,7 +14,7 @@ ImageHash::operator std::string() {
     if (_hash.empty()) {
         return std::string("0");
     }
-    char * hex = new char[(_hash.size() >> 2) + (_hash.size() & 3) ? 1 : 0];
+    char * hex = new char[(_hash.size() >> 2) + (_hash.size() & 3) ? 2 : 1];
     if (hex == NULL) {
         throw std::bad_alloc();
     }
@@ -36,6 +36,7 @@ ImageHash::operator std::string() {
         ch <<= 4 - (i & 3);
     }
     *(symbol++) = hex_digit(ch);
+    *symbol = '\0';
     std::string s = hex;
     delete[] hex;
     return s;
