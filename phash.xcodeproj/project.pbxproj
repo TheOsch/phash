@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		C7D906E4251D98A800EEAD5E /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C7D906E3251D98A800EEAD5E /* main.cpp */; };
+		C7D906ED251F036500EEAD5E /* ImageHash.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C7D906EB251F036500EEAD5E /* ImageHash.cpp */; };
+		C7D906F0251F20D700EEAD5E /* phash.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C7D906EE251F20D700EEAD5E /* phash.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +27,10 @@
 /* Begin PBXFileReference section */
 		C7D906E0251D98A800EEAD5E /* phash */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = phash; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7D906E3251D98A800EEAD5E /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		C7D906EB251F036500EEAD5E /* ImageHash.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ImageHash.cpp; sourceTree = "<group>"; };
+		C7D906EC251F036500EEAD5E /* ImageHash.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ImageHash.hpp; sourceTree = "<group>"; };
+		C7D906EE251F20D700EEAD5E /* phash.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = phash.cpp; sourceTree = "<group>"; };
+		C7D906EF251F20D700EEAD5E /* phash.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = phash.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +64,10 @@
 			isa = PBXGroup;
 			children = (
 				C7D906E3251D98A800EEAD5E /* main.cpp */,
+				C7D906EB251F036500EEAD5E /* ImageHash.cpp */,
+				C7D906EC251F036500EEAD5E /* ImageHash.hpp */,
+				C7D906EE251F20D700EEAD5E /* phash.cpp */,
+				C7D906EF251F20D700EEAD5E /* phash.hpp */,
 			);
 			path = phash;
 			sourceTree = "<group>";
@@ -119,6 +129,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				C7D906E4251D98A800EEAD5E /* main.cpp in Sources */,
+				C7D906ED251F036500EEAD5E /* ImageHash.cpp in Sources */,
+				C7D906F0251F20D700EEAD5E /* phash.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -241,6 +253,23 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 62U5RJKCTW;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"MAGICKCORE_HDRI_ENABLE=1",
+					"MAGICKCORE_QUANTUM_DEPTH=16",
+					"DEBUG=1",
+				);
+				HEADER_SEARCH_PATHS = "/usr/local/Cellar/imagemagick/7.0.10-30_1/include/ImageMagick-7";
+				LIBRARY_SEARCH_PATHS = "/usr/local/Cellar/imagemagick/7.0.10-30_1/lib";
+				OTHER_CPLUSPLUSFLAGS = (
+					"$(OTHER_CFLAGS)",
+					"-Xpreprocessor",
+					"-fopenmp",
+				);
+				OTHER_LDFLAGS = (
+					"-lMagick++-7.Q16HDRI",
+					"-lMagickWand-7.Q16HDRI",
+					"-lMagickCore-7.Q16HDRI",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -250,6 +279,22 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 62U5RJKCTW;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"MAGICKCORE_HDRI_ENABLE=1",
+					"MAGICKCORE_QUANTUM_DEPTH=16",
+				);
+				HEADER_SEARCH_PATHS = "/usr/local/Cellar/imagemagick/7.0.10-30_1/include/ImageMagick-7";
+				LIBRARY_SEARCH_PATHS = "/usr/local/Cellar/imagemagick/7.0.10-30_1/lib";
+				OTHER_CPLUSPLUSFLAGS = (
+					"$(OTHER_CFLAGS)",
+					"-Xpreprocessor",
+					"-fopenmp",
+				);
+				OTHER_LDFLAGS = (
+					"-lMagick++-7.Q16HDRI",
+					"-lMagickWand-7.Q16HDRI",
+					"-lMagickCore-7.Q16HDRI",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
